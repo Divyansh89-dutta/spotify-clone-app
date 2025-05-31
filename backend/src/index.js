@@ -32,13 +32,13 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use(clerkMiddleware()); // this will add auth to req obj => req.auth
+app.use(clerkMiddleware()); 
 app.use(fileUpload({
   useTempFiles: true,
   tempFileDir: path.join(__dirname, 'tmp'),
   createParentPath: true,
   limits: { 
-    fileSize: 10 * 1024 * 1024 // 10MB max file size
+    fileSize: 10 * 1024 * 1024
   }
 }));
 

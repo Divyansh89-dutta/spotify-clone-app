@@ -8,12 +8,8 @@ config();
 const seedDatabase = async () => {
 	try {
 		await mongoose.connect(process.env.MONGODB_URI);
-
-		// Clear existing data
 		await Album.deleteMany({});
 		await Song.deleteMany({});
-
-		// First, create all songs
 		const createdSongs = await Song.insertMany([
 			{
 				title: "City Rain",

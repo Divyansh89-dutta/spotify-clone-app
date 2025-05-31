@@ -9,8 +9,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    // this is a third-party authentication service (clerk), so we keep track of the clerkId to 
-    // identify the user
     clerkId: {
         type: String,
         required: true,

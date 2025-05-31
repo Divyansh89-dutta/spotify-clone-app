@@ -7,7 +7,6 @@ export const authCallback = async (req, res, next) => {
         const user = await User.findOne({ clerkId: id });
 
         if (!user) {
-            // signup
             await User.create({
                 clerkId: id,
                 fullName: `${firstName || ""} ${lastName || ""}`.trim(),

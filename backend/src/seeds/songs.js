@@ -136,11 +136,7 @@ const songs = [
 const seedSongs = async () => {
 	try {
 		await mongoose.connect(process.env.MONGODB_URI);
-
-		// Clear existing songs
 		await Song.deleteMany({});
-
-		// Insert new songs
 		await Song.insertMany(songs);
 
 		console.log("Songs seeded successfully!");
